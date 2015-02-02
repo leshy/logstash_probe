@@ -34,9 +34,8 @@ plugin = backbone.Model.extend4000
         wrap()
         
     feed: (err,data) ->
-
-        
-        packet = _.extend data, { probe: @name }, settings.extendPacket
+        packet = _.extend {}, settings.extendPacket
+        packet[@name] = data
         console.log  colors.green(@name), packet
         console.log gun.send new Buffer JSON.stringify packet
         

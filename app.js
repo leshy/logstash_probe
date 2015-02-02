@@ -57,9 +57,8 @@
     },
     feed: function(err, data) {
       var packet;
-      packet = _.extend(data, {
-        probe: this.name
-      }, settings.extendPacket);
+      packet = _.extend({}, settings.extendPacket);
+      packet[this.name] = data;
       console.log(colors.green(this.name), packet);
       return console.log(gun.send(new Buffer(JSON.stringify(packet))));
     },
