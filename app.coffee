@@ -23,6 +23,8 @@ gun = new UdpGun settings.port, settings.host
 
 env = { settings: settings }
 
+console.log 'settings',settings
+
 plugin = backbone.Model.extend4000
     interval: 10000
     

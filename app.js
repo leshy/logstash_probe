@@ -39,6 +39,8 @@
     settings: settings
   };
 
+  console.log('settings', settings);
+
   plugin = backbone.Model.extend4000({
     interval: 10000,
     start: function() {
