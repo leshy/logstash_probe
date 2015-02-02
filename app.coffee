@@ -16,7 +16,7 @@ settings =
         type: 'probe',
         host: os.hostname()
         
-if fs.existsSync('./settings.coffee') then _.extend settings, require('./settings').settings
+if fs.existsSync('./settings.js') then _.extend settings, require('./settings').settings
 
 UdpGun = require 'udp-client'
 gun = new UdpGun settings.port, settings.host

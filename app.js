@@ -27,7 +27,7 @@
     }
   };
 
-  if (fs.existsSync('./settings.coffee')) {
+  if (fs.existsSync('./settings.js')) {
     _.extend(settings, require('./settings').settings);
   }
 
