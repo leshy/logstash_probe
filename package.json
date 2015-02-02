@@ -7,5 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "lesh",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "async": "^0.9.0",
+    "backbone4000": "git://github.com/leshy/backbone4000.git",
+    "colors": "^1.0.3",
+    "helpers": "git://github.com/leshy/nodejs-helpers.git",
+    "procfile": "^0.1.1",
+    "underscore": "^1.7.0"
+  }
 }
