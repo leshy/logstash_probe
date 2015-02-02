@@ -4,8 +4,22 @@ fs = require 'fs'
 helpers = require 'helpers'
 backbone = require 'backbone4000'
 colors = require 'colors'
-settings = { pluginDir : "/node_modules/", plugin: {} }
+os = require 'os'
+
+
+settings =
+    pluginDir : "/node_modules/"
+    plugin: {}
+    host: 'localhost'
+    port: "6000"
+    extendPacket:
+        type: 'probe',
+        host: os.hostname()
+        
 if fs.existsSync('./settings.coffee') then _.extend settings, require('./settings').settings
+
+UdpGun = require 'udp-client'
+gun = new UdpGun settings.port, settings.host
 
 env = { settings: settings }
 
@@ -18,7 +32,11 @@ plugin = backbone.Model.extend4000
         wrap()
         
     feed: (err,data) ->
-        console.log  colors.green(@name) + '\n' + err + '\n' + JSON.stringify(data) + '\n'
+
+        
+        packet = _.extend data, { probe: @name }, settings.extendPacket
+        console.log  colors.green(@name), packet
+        console.log gun.send new Buffer JSON.stringify packet
         
     stop: ->
         if @i
