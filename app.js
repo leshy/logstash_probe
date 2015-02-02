@@ -15,7 +15,8 @@
   colors = require('colors');
 
   settings = {
-    pluginDir: "/node_modules/"
+    pluginDir: "/node_modules/",
+    plugin: {}
   };
 
   if (fs.existsSync('./settings.coffee')) {

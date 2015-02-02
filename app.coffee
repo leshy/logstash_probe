@@ -4,7 +4,7 @@ fs = require 'fs'
 helpers = require 'helpers'
 backbone = require 'backbone4000'
 colors = require 'colors'
-settings = { pluginDir : "/node_modules/" }
+settings = { pluginDir : "/node_modules/", plugin: {} }
 if fs.existsSync('./settings.coffee') then _.extend settings, require('./settings').settings
 
 env = { settings: settings }
