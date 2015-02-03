@@ -2,4 +2,4 @@ pluggable system information collection service that sends UDP JSON data to logs
 
 supports munin plugins
 
-http://lesh.sysphere.org/stuff1/muninkibana.png
+![SCREENSHOT!](http://lesh.sysphere.org/stuff1/muninkibana.png)
